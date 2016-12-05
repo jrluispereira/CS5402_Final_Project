@@ -1,0 +1,30 @@
+%CS 5402 - Final Project
+%Luis Pereira - Malick Ndiaye
+%An algorithmic approach to spam detection
+clear all; clc; close all;
+
+% Create Training dataset using text files- -1=non spam && 1=spam
+emailFile = 'emails.txt';
+classFile = 'classification.txt';
+trainingData = getTrainingData( emailFile,classFile );
+trainingData=dataset2cell(trainingData);
+trainingData(1,:) = [];
+scores = getSpamScores(trainingData);
+
+
+N = size(trainingData,1);
+for i =1:N
+    j = 1;
+    if trainingData(i,2) == -1
+        nonSpams(j) = 
+    end
+end
+nonSpamIdx = find(trainingData(:,2) <0 );
+
+x = 1:size(trainingData,1);
+y1 = trainingData(spamIdx,:);
+y2 = trainingData(nonSpamIdx,:);
+
+figure();
+plotyy(x,y1,x,y2);
+

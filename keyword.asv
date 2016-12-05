@@ -1,0 +1,27 @@
+function [ keyWordScore ] = keyword(email)
+
+keyWordScore = 0;
+% email = char(email);
+% words = strsplit(email,' ');
+% wordsLen = length(words);
+
+
+list = dataset('File','keyword.txt');
+list=dataset2cell(list);
+list(1,:) = [];
+% for i = 1:wordsLen
+%     word = words(i);
+%     if isKeyword(word) == 1
+%         keyWordScore = keyWordScore+1;
+%     end
+% end
+
+for i=1:1%size(list,1)
+    list(i)
+    email
+    regEx= list(i);
+    matchStr = regexpi(email,regEx,'match','ignorecase')
+end
+
+
+end
